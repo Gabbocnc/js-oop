@@ -19,7 +19,7 @@ Calcoliamo l'età della vettura utilizzando il metodo calcolaEta() */
 
 //Successivamente:
 /* Istanziamo una nuova Automobile (Opel, 2020, nera, con 4 porte, a benzina)
-Stampiamo il numero di porte e il tipo di carburante. */      
+Stampiamo il numero di porte e il tipo di carburante. */
 
 
 class Veicolo {
@@ -29,7 +29,7 @@ class Veicolo {
     porte;
     carburante;
 
-    constructor(marca,anno,colore,porte,carburante){
+    constructor(marca, anno, colore, porte, carburante) {
         this.marca = marca;
         this.anno = anno;
         this.colore = colore;
@@ -37,16 +37,26 @@ class Veicolo {
         this.carburante = carburante;
     }
 
-    getCarAge(){
+    getCarAge() {
         const date = new Date();
         const year = date.getFullYear()
-        return  `${'Questa macchina ha:'} ${year- this.anno} ${'anni'} `
+        return `${'Questa macchina ha:'} ${year - this.anno} ${'anni'} `
     }
-   
-   
-} 
+}
 
 const fiat2019 = new Veicolo('Fiat', 2019, 'blu');
 console.log(fiat2019);
 console.log(fiat2019.getCarAge());
+
+class Automobile extends Veicolo {
+    constructor(marca, anno, colore, porte, carburante, cambio,trazione) {
+        super(marca, anno, colore, porte, carburante);
+        this.cambio = cambio;
+        this.trazione = trazione;
+    }
+}
+
+const Opel = new Automobile('Opel', 2020, 'nera',4,'benzina','automatico','integrale');
+console.log(Opel);
+console.log(`${Opel.porte} ${Opel.carburante}`);
 
